@@ -1,0 +1,51 @@
+{
+  "task": "regression",
+  "name": "mt_regression",
+  "version": "v1",
+  "target": {
+    "name": "Melting Temperature",
+    "unit": "°C"
+  },
+  "columns": {
+    "smiles": "canonical_smiles",
+    "target": "Melting Temperature",
+    "label": "Label"
+  },
+  "fingerprint": {
+    "type": "Morgan",
+    "radius": 3,
+    "n_bits": 2048
+  },
+  "ensemble": {
+    "type": "weighted",
+    "w_RF": 0.55,
+    "w_Chemprop": 0.44999999999999996
+  },
+  "chemprop_hparams": {
+    "capacity": {
+      "depth": 3,
+      "hidden_size": 300,
+      "dropout": 0.0,
+      "weight_decay": 0.0,
+      "aggregation": "norm",
+      "aggregation_norm": 100,
+      "ffn_num_layers": 1
+    },
+    "train": {
+      "epochs": 250,
+      "batch_size": 64,
+      "init_lr": 0.0001,
+      "max_lr": 0.001,
+      "final_lr": 0.0001,
+      "warmup_epochs": 2,
+      "split": "RANDOM",
+      "split_sizes": [
+        0.8,
+        0.1,
+        0.1
+      ],
+      "metric": "r2"
+    }
+  },
+  "run_tag": "default_explicit"
+}

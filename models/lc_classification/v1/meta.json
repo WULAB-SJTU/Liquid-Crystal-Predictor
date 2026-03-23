@@ -1,0 +1,23 @@
+{
+  "task": "classification",
+  "name": "lc_classification",
+  "version": "v1",
+  "fingerprint": {
+    "type": "Morgan",
+    "radius": 3,
+    "n_bits": 2048
+  },
+  "labels": {
+    "positive": "LC",
+    "negative": "Non-LC",
+    "positive_id": 1
+  },
+  "ensemble": {
+    "voting_threshold": 1,
+    "members": [
+      "dnn",
+      "svm",
+      "xgb"
+    ]
+  }
+}

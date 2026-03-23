@@ -1,0 +1,15 @@
+{
+  "task": "regression",
+  "name": "ct_regression",
+  "version": "v1",
+  "target": {
+    "name": "Clearing Temperature",
+    "unit": "°C"
+  },
+  "chemprop_best_setup": "d7_h1600_dr0p1_wd1em06",
+  "columns": {
+    "smiles": "smiles",
+    "target": "target"
+  },
+  "note": "Frozen from fixed-HP training (no sweep)."
+}
